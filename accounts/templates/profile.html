@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="container mx-auto p-6 bg-white text-black font-medium min-h-screen">
+  <div class="mt-12 flex justify-center">
+    <!-- Profile Card -->
+    <div class="bg-gray-100 rounded-lg p-8 w-full max-w-xl space-y-6 shadow-lg border border-gray-300">
+      
+      <!-- Profile Image -->
+      <div class="flex justify-center">
+        {% if profile.profile_photo %}
+          <img src="{{ profile.profile_photo.url }}" alt="Profile Photo" class="rounded-full w-32 h-32 object-cover">
+        {% else %}
+          <img src="https://st2.depositphotos.com/1104517/11965/v/600/depositphotos_119659092-stock-illustration-male-avatar-profile-picture-vector.jpg" 
+               alt="Default Avatar" class="rounded-full w-32 h-32 object-cover">
+        {% endif %}
+      </div>
+
+      <!-- Profile Details -->
+      <div class="space-y-3 text-sm text-gray-700">
+        <p><span class="text-gray-500">Username:</span> {{ user.username }}</p>
+        <p><span class="text-gray-500">First Name:</span> {{ user.first_name }}</p>
+        <p><span class="text-gray-500">Last Name:</span> {{ user.last_name }}</p>
+        <p><span class="text-gray-500">Email:</span> {{ user.email }}</p>
+
+        <p>
+          {% if profile.bio %}
+            <span><span class="text-gray-500">Bio:</span> {{ profile.bio }}</span>
+          {% else %}
+            <span class="text-red-500 italic">No bio provided</span>
+          {% endif %}
+        </p>
+
+        <p><span class="text-gray-500">Contact:</span> {{ profile.contact }}</p>
+        <p><span class="text-gray-500">Location:</span> {{ profile.location }}</p>
+      </div>
+
+      <!-- Edit Profile Button -->
+      <div class="pt-4 text-center">
+        <a href="{% url 'update_profile' user.id %}" class="inline-block bg-black text-white hover:bg-gray-800 text-sm px-5 py-2 rounded-full transition duration-200">
+          Edit Profile
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+<nav class="bg-indigo-900 py-3 shadow-md">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center space-x-4">
+      <a href="/" class="py-2 px-3 text-gray-100 hover:text-blue-400 hover:bg-indigo-800 transition rounded">Home</a>
+      <a href="/accounts/about/" class="py-2 px-3 text-gray-100 hover:text-blue-400 hover:bg-indigo-800 transition rounded">About Us</a>
+      <a href="/accounts/profile/" class="py-2 px-3 text-gray-100 hover:text-blue-400 hover:bg-indigo-800 transition rounded">Profile</a>
+
+      {% if user.is_authenticated %}
+      <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="py-2 px-3 text-red-400 hover:text-red-300 hover:bg-indigo-800 transition rounded">Logout</button>
+      </form>
+      {% endif %}
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+      <button type="button" class="mobile-menu-button text-gray-100 hover:text-blue-300 focus:outline-none">
+        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="hidden mobile-menu md:hidden px-4 pt-2 pb-4 space-y-2 bg-indigo-800">
+    <a href="/" class="block py-2 px-3 text-gray-100 hover:text-blue-300 hover:bg-indigo-700 rounded">Home</a>
+    <a href="/accounts/about/" class="block py-2 px-3 text-gray-100 hover:text-blue-300 hover:bg-indigo-700 rounded">About Us</a>
+    <a href="/accounts/profile/" class="block py-2 px-3 text-gray-100 hover:text-blue-300 hover:bg-indigo-700 rounded">Profile</a>
+
+    {% if user.is_authenticated %}
+    <form method="post" action="{% url 'logout' %}">
+      {% csrf_token %}
+      <button type="submit" class="block w-full text-left py-2 px-3 text-red-400 hover:text-red-300 hover:bg-indigo-700 rounded">Logout</button>
+    </form>
+    {% endif %}
+  </div>
+</nav>
+
+<!-- Mobile toggle -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.querySelector('.mobile-menu-button');
+    const menu = document.querySelector('.mobile-menu');
+    btn.addEventListener('click', function () {
+      menu.classList.toggle('hidden');
+    });
+  });
+</script>
