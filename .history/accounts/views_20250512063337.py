@@ -17,8 +17,8 @@ def index(request):
         },
         {
             "file": "gallery/karsten-winegeart-ZaLiX2MGHLw-unsplash.jpg",
-            "title": "DAWG",
-            "description": "DAWWG."
+            "title": "M",
+            "description": "Chillin' at 3,000ft with this view."
         }
     ]
     return render(request, 'index.html', {'images': images})  

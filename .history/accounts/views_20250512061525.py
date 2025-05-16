@@ -12,13 +12,13 @@ def index(request):
         },
         {
             "file": "gallery/Das ASTROWORLD Drum Kit ist ein dekonstruiertes….jpg",
-            "title": "ASTROWORLD",
-            "description": "Travis Scott's debut album"
+            "title": "City Lights",
+            "description": "Downtown skyline doing its thing at night."
         },
         {
-            "file": "gallery/karsten-winegeart-ZaLiX2MGHLw-unsplash.jpg",
-            "title": "DAWG",
-            "description": "DAWWG."
+            "file": "gallery/cool-pic.png",
+            "title": "Mountain Mood",
+            "description": "Chillin' at 3,000ft with this view."
         }
     ]
     return render(request, 'index.html', {'images': images})  

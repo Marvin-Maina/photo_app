@@ -16,9 +16,9 @@ def index(request):
             "description": "Travis Scott's debut album"
         },
         {
-            "file": "gallery/karsten-winegeart-ZaLiX2MGHLw-unsplash.jpg",
-            "title": "DAWG",
-            "description": "DAWWG."
+            "file": "static\gallery\karsten-winegeart-ZaLiX2MGHLw-unsplash.jpg",
+            "title": "Mountain Mood",
+            "description": "Chillin' at 3,000ft with this view."
         }
     ]
     return render(request, 'index.html', {'images': images})  

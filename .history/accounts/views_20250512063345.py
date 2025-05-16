@@ -18,7 +18,7 @@ def index(request):
         {
             "file": "gallery/karsten-winegeart-ZaLiX2MGHLw-unsplash.jpg",
             "title": "DAWG",
-            "description": "DAWWG."
+            "description": "."
         }
     ]
     return render(request, 'index.html', {'images': images})  
