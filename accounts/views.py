@@ -6,19 +6,19 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     images = [
         {
-            "file": "gallery/knxrt-hCe286vKOqc-unsplash.jpg",
-            "title": "Sunset Vibes",
-            "description": "Captured at golden hour, 100% no filter."
+            "file": "gallery\katie-smith-uQs1802D0CQ-unsplash.jpg",
+            "title": "Kitchen",
+            "description": "Time to prepare a meal."
         },
         {
-            "file": "gallery/Das ASTROWORLD Drum Kit ist ein dekonstruiertes….jpg",
-            "title": "ASTROWORLD",
-            "description": "Travis Scott's debut album"
+            "file": "gallery/logan-weaver-lgnwvr-mi4Gfdl36yg-unsplash.jpg",
+            "title": "GYM",
+            "description": "Time to workout."
         },
         {
-            "file": "gallery/karsten-winegeart-ZaLiX2MGHLw-unsplash.jpg",
-            "title": "DAWG",
-            "description": "DAWWG."
+            "file": "gallery/frances-gunn-QcBAZ7VREHQ-unsplash.jpg",
+            "title": "FARM",
+            "description": "Time to farm."
         }
     ]
     return render(request, 'index.html', {'images': images})  
